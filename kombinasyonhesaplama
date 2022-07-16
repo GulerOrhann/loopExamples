@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("C(n,r)'nin n sayisini giriniz:");
+        int n = input.nextInt();
+        System.out.println("C(n,r)'nin r sayisini giriniz:");
+        int r = input.nextInt();
+        int factoriyelN = 1;
+        int factoriyelR = 1;
+        int factoriyelN_R = 1;
+        int combination;
+
+        if (n >= r) {
+
+            for (int i = 1; i <= n; i++) {
+                factoriyelN *= i;
+            }
+            for (int j = 1; j <= r; j++) {
+                factoriyelR *= j;
+            }
+            for (int k = 1; k <=(n-r); k++) {
+                factoriyelN_R *= k;
+            }
+            combination=factoriyelN/(factoriyelR*factoriyelN_R);
+            System.out.println("Kombinasyon Sonucu:"+combination);
+        }else{
+            System.out.println("Lutfen n degerini r degerinden buyuk olacak sekilde giriniz!");
+        }
+
+    }
+}
