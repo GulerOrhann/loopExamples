@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("number1 sayisini giriniz:");
+        int number1 = input.nextInt();
+        System.out.println("number2 sayisini giriniz:");
+        int number2 = input.nextInt();
+        int ebob = 0;
+        int ekok=0;
+
+        for (int i = 1; i <= number1; i++) {
+            if (number1 % i == 0 && number2 % i == 0) {
+                ebob = i;
+            }
+        }
+        System.out.println("EBOB:" + ebob);
+        for (int k = 1; k <= (number1 * number2); k++) {
+            if (k % number1 == 0 && k % number2 == 0) {
+                ekok=k;
+                break;
+            }
+        }
+        System.out.println("EKOK:" + ekok);
+
+
+    }
+}
