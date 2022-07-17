@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Bir sayi giriniz:");
+        int number=input.nextInt();
+
+        int total = 0;
+        if(number<0){
+            System.out.println("Gecersiz sayidir");
+            return;
+
+        }
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                total += i;
+            }
+        }
+        if (total == number) {
+            System.out.println(number+" Mukemmel sayidir");
+        } else {
+            System.out.println(number+" Mukemmel sayi degildir");
+        }
+
+    }
+}
