@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Sayi Giriniz:");
+
+        int number = input.nextInt();
+        int tempNumber = number;
+        int basamakNumber = 0;
+        int basamakValue;
+        int result = 0;
+        int basamakPower;
+
+        while (tempNumber != 0) {
+            tempNumber /= 10;
+            basamakNumber++;
+        }
+        System.out.println("Basamak Sayisi:" + basamakNumber);
+
+        tempNumber = number;
+        System.out.println("Basamak Degerleri:");
+        while (tempNumber != 0) {
+            basamakValue = tempNumber % 10;
+
+            basamakPower = 1;
+            for (int i = 1; i <= basamakNumber; i++) {
+                basamakPower *= basamakValue;
+            }
+            result += basamakPower;
+            System.out.println(basamakValue);
+            tempNumber /= 10;
+
+        }
+        if (result == number) {
+            System.out.println(number + " sayisi bir Armstrong sayisidir.");
+        } else {
+            System.out.println(number + " sayisi bir Armstrong sayisi degildir!");
+
+        }
+    }
+}
