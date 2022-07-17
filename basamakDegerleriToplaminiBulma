@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int number;
+        int total = 0;
+        int basamakValue;
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Lutfen bir sayi giriniz:");
+        number = input.nextInt();
+
+
+        while (number != 0) {
+            basamakValue = number % 10;
+            total += basamakValue;
+            System.out.println(basamakValue);
+            number /= 10;
+        }
+        System.out.println("Basamak degerleri toplami:" + total);
+    }
+}
